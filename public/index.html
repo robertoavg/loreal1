@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Challenge Loreal</title>
+    <!--FONT AWESOME-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+    />
+    <!--FONT OSWALD-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!--Filepond-->
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+    <!--CUSTOM CSS-->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/8.1.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/8.1.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.1.1/firebase-database.js"></script>
+    <script defer src="/__/firebase/8.1.1/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/8.1.1/firebase-functions.js"></script>
+    <script defer src="/__/firebase/8.1.1/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/8.1.1/firebase-storage.js"></script>
+    <script defer src="/__/firebase/8.1.1/firebase-analytics.js"></script>
+    <script defer src="/__/firebase/8.1.1/firebase-remote-config.js"></script>
+    <script defer src="/__/firebase/8.1.1/firebase-performance.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+      <!--
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; font: }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
+      }
+    </style>
+
+  </head>
+  <body>
+    <header id="header">
+      <!--MENU-->
+    <div class="menu-btn">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="container">
+      <nav class="nav-main">
+        <img src="https://www.theunitedstateofwomen.org/wp-content/uploads/2020/07/loreal-png-l-oreal-paris-google-hangout-3000.png" alt="Loreal" class="center" width="150" height="50" />
+        <ul class="nav-menu">
+          <li>
+            <a href="#">Análisis</a>
+          </li>
+          <li>
+            <a href="#">El cuidado de tu piel</a>
+          </li>
+          <li>
+            <a href="#">Productos Loreal</a>
+          </li>
+          <li>
+            <a href="#">Challenge Loreal</a>
+          </li>
+          <li>
+            <a href="#">Equipo 6</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <header class="mensaje">
+    <h1>
+      Análisis de Lunares
+    </h1>
+    <p>
+      Esta aplicación tiene la finalidad de comparar la imagen deseada</br>
+      con la base de datos existente de la clasificación de melanomas,</br>
+      otorgando un resultado de si este es benigno o maligno.
+    </p>
+      <div>
+        <!--Filepond-->
+        <!-- We'll transform this input into a pond -->
+        <input type="file" class="filepond">
+      
+        <!-- Load FilePond library -->
+        <script src="https://unpkg.com/filepond/dist/filepond.js"></script> 
+      
+        <!-- Turn all file input elements into ponds -->
+        <script>
+        FilePond.parse(document.body);
+        </script>
+      </div>
+  </header>
+  <header class="mensaje1">
+    <h1>
+      ¡Cuida tu piel!
+    </h1>
+    <div class="info">
+      <p>
+        El sol, las lámparas solares y las camas o cámaras de bronceado emiten radiación ultravioleta (UV). </br>
+        La exposición a la radiación UV causa el envejecimiento prematuro de la piel y daños que pueden resultar en cáncer de piel.</br>
+        Las personas de cualquier edad y tonos de piel deben limitar la cantidad de tiempo que pasan al sol. En especial, evite estar al sol entre las 10 de la mañana y las 4 de la tarde. </br>
+        Tampoco se exponga a otras fuentes de radiación UV, como las camas de bronceado. Tenga en cuenta que los rayos UV se reflejan (rebotan) en la arena, el agua, la nieve y el hielo y atraviesan el parabrisas del automóvil y las ventanas. </br>
+        Aunque el cáncer de piel es más frecuente en las personas con piel más clara, el cáncer de piel se presenta en personas con cualquier tono de piel, incluso si tienen la piel oscura.</br>
+        </br>Siga estos consejos para proteger la piel del sol:</br>
+        <ul>
+          <li>Use un sombrero de ala ancha que le dé sombra alrededor de la cara, el cuello y las orejas. Las gorras de béisbol y los visores solo protegen algunas partes de la piel.</br></li>
+          <li>Póngase gafas que filtren los rayos UV para protegerse los ojos y la piel que los rodea.</br></li>
+          </li>Use mangas largas y pantalones largos. Las telas oscuras y de tejido más cerrado son las mejores. Algunas telas contienen factor de protección ultravioleta (UPF). Mientras más alto el número, mayor es el factor de protección solar.</br></li>
+          </li>Use productos con un factor de protección solar (SPF) mínimo de 15. (Algunos médicos recomiendan usar productos con un SPF mínimo de 30). </br></li>
+          </li>Aplique la cantidad indicada de protector a la piel expuesta 30 minutos antes de estar al aire libre. Repita esto cada 2 horas o después de nadar o sudar.</br></li>
+        </ul>
+      </p>
+      </br>Recuerde esto acerca de los rayos del sol:</br>
+      <ul>
+        <li>Más fuertes entre las 10 de la mañana y las 4 de la tarde.</li>
+        <li>Atraviesan la ropa de color claro, los parabrisas del automóvil, las ventanas y las nubes.</li>
+        <li>Se reflejan en la arena, el agua, la nieve, el hielo y el pavimento.</li>
+      </ul>
+      <a href="https://www.cancer.gov/espanol/cancer/causas-prevencion/riesgo/luz-solar">(Cancer.gov, 2020)</a>
+    </div>
+  </header>
+  <header class="mensaje">
+    <h1>
+      Productos Loreal
+    </h1>
+    <p>
+      Te invitamos a conocer los productos de cuidado para la piel que Loreal tiene para ti.
+    </p>
+    <section class="banner">
+      <div class="content">
+        <img src="https://www.hairmart.com.au/wp-content/uploads/2016/04/loreal-professional-products.png" alt="logo1"/>
+        <a href="https://www.loreal-paris.com.mx/cuidado-facial/cuidado-de-la-piel">Productos</a>
+      </div>
+    </section>
+  </header>
+  <header class="mensaje">
+    <h1>
+      Challenge Loreal
+    </h1>
+    <p>
+      Conoce el Challenge de Loreal en la siguiente documentación:
+    </p>    
+    <section class="banner">
+      <div class="content">
+        <img src="https://media-exp1.licdn.com/dms/image/C560BAQGx1i8oFMeudg/company-logo_200_200/0?e=2159024400&v=beta&t=A4YouIHe-tlstdrLRqLUBxxJJDuNiQh5HSXgW3jDg_E" alt="logo2"/>
+        <a href="https://docs.google.com/document/d/1kXuEPyYNHGOCYl9iZosqsN4jUORXkZXry5IwQgsC2OM/edit#heading=h.cxwdubxng5ts">Challenge</a>
+      </div>
+    </section>
+  </header>
+  <header class="mensaje">
+    <h1>
+      Equipo 6
+    </h1>
+    <p>
+      ¡Conoce nuestro equipo!
+    </p>
+    <div class="Equipo">
+      <div>
+        <a href="#">
+          <img src="https://media-exp1.licdn.com/dms/image/C4E03AQHvi3BT5D2saA/profile-displayphoto-shrink_200_200/0?e=1611792000&v=beta&t=a04f7Kn2NAox7aSLu-fvYSnTxdfuvxAbfAHxrA656Ok" alt="Roberto" />
+        </a>
+        <h3>Roberto Villanueva</h3>
+      </div>
+      <div>
+        <a href="#">
+          <img src="https://media-exp1.licdn.com/dms/image/C5603AQEsXSMVZVJG6g/profile-displayphoto-shrink_200_200/0?e=1611792000&v=beta&t=3liulpXrzxZiWF7-c-XOUpCSAt0VACbThNplILzmhiM" alt="Cristian" />
+        </a>
+        <h3>Cristian Murra</h3>
+      </div>
+      <div>
+        <a href="#">
+          <img src="https://media-exp1.licdn.com/dms/image/C4E03AQHvi3BT5D2saA/profile-displayphoto-shrink_200_200/0?e=1611792000&v=beta&t=a04f7Kn2NAox7aSLu-fvYSnTxdfuvxAbfAHxrA656Ok" alt="Roberto1" />
+        </a>
+        <h3>AAAA</h3>
+      </div>
+      <div>
+        <a href="#">
+          <img src="https://media-exp1.licdn.com/dms/image/C5603AQEsXSMVZVJG6g/profile-displayphoto-shrink_200_200/0?e=1611792000&v=beta&t=3liulpXrzxZiWF7-c-XOUpCSAt0VACbThNplILzmhiM" alt="Cristian1" />
+        </a>
+        <h3>BBBBB</h3>
+      </div>
+    </div>
+  </header>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const loadEl = document.querySelector('#load');
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.firestore().doc('/foo/bar').get().then(() => { });
+        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        // firebase.analytics(); // call to activate
+        // firebase.analytics().logEvent('tutorial_completed');
+        // firebase.performance(); // call to activate
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+        try {
+          let app = firebase.app();
+          let features = [
+            'auth', 
+            'database', 
+            'firestore',
+            'functions',
+            'messaging', 
+            'storage', 
+            'analytics', 
+            'remoteConfig',
+            'performance',
+          ].filter(feature => typeof app[feature] === 'function');
+          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+    </script>
+          <section class="banner">
+            <div class="content">
+              <img src="https://s4.thcdn.com/widgets/95-en/08/Feel_Unique_Loreal-093008.jpg" alt="logo3" />
+            </div>
+          </section>
+          <section class="social">
+            <p>Siguenos en nuestras redes sociales</p>
+            <div class="links">
+              <a href="https://www.facebook.com/lorealparismexico/">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://twitter.com/LorealParisMx">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://www.instagram.com/lorealparis">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </section>
+  </body>
+</html>
