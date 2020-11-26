@@ -101,10 +101,14 @@ ul{
     justify-content: center;
 }
 
+.mensaje div{
+    padding-bottom: 50px;
+}
+
 .mensaje1 h1{
     text-align: center; 
     color: black; 
-    padding: 20px; 
+    padding-bottom: 20px; 
     border-radius: 4px; 
     font-size: 22px;
     font-family: 'Oswald' sans-serif;
@@ -112,7 +116,6 @@ ul{
     justify-content: space-between;
     align-items: center;
     height: 60px;
-    padding: 20px 0;
     text-decoration: none;
     color: black;
 }
@@ -174,7 +177,6 @@ ul{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 50px;
 }
 
 .banner .content p {
@@ -243,6 +245,9 @@ ul{
 }
 
 @media (max-width: 700px){
+    .nav-main{
+        width: 80;
+    }
     .banner .content{
         margin: auto;
         width: 80%;
